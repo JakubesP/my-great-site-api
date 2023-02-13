@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  my_great_site_database:
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: my_great_site
+    volumes:
+      - my_great_site_database_vol:/var/lib/postgresql/data
+
+volumes:
+  my_great_site_database_vol:
